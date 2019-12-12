@@ -71,7 +71,7 @@ void Forum::printPost(int id) {
 /*
 Insert Post to Thread and to the BST
 */
-void Forum::insertPost(Thread* thread, Post* post) {
-  thread->addPost(post);
+void Forum::insertPost(const string &thread, Post* post) {
+  getThread(thread)->addPost(post);
   //creator_bst.insert(post);
 }

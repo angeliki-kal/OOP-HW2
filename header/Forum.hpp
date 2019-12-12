@@ -19,7 +19,7 @@ class Forum {
     void print();
     Post* getPost(int id);
     void printPost(int id);
-    void insertPost(Thread*,Post*);
+    void insertPost(const std::string&,Post*);
 };
 
 #endif

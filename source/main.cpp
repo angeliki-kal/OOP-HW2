@@ -25,7 +25,8 @@ int main(int argc, char** argv) {
   Creator* creators[5];
   for(int i=0; i<num_posts; i++) {
     Creator* crt = new Creator("crt"+to_string(i));
-    crt->createPost("posttitle"+to_string(i), "2000-03-15", getRandomText(), &A, A.getThread("Thread2"));
+    Post* post = new Post("posttitle"+to_string(i), crt, "2000-03-15", getRandomText());
+    A.insertPost("Thread2", post); //add to forum
     creators[i] = crt;
   }
   //print x random posts from forum

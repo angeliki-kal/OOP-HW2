@@ -13,8 +13,6 @@ class Creator {
     Creator(std::string);
     ~Creator();
     std::string getName();
-    //create post and insert it to forum/thread
-    void createPost(std::string title, std::string date, std::string text, Forum* forum, Thread* thread);
 };
 
 #endif
