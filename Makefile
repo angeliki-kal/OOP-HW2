@@ -6,11 +6,11 @@ CC = g++
 CFLAGS=-g -I$(INCLUDE_DIR) -fmax-errors=5
 OUT = hw2
 
-_DEPS = Forum.hpp Thread.hpp Post.hpp Date.hpp Creator.hpp
+_DEPS = Forum.hpp Thread.hpp Post.hpp Date.hpp Creator.hpp Node.hpp
 #pattern matching from  _DEPS to include directory
 DEPS = $(patsubst %,$(INCLUDE_DIR)/%,$(_DEPS))
 
-_OBJ = main.o Forum.o Thread.o Post.o Date.o Creator.o
+_OBJ = main.o Forum.o Thread.o Post.o Date.o Creator.o Node.o
 #same pattern matching principe
 OBJ = $(patsubst %,$(OBJECT_DIR)/%,$(_OBJ))
 

@@ -18,6 +18,7 @@ class Post {
  public:
    Post(std::string title, Creator* creator, std::string date, std::string text);
    ~Post();
+   Creator* getCreator(); 
    int getId();
    std::string getTitle();
    void print();
@@ -25,5 +26,6 @@ class Post {
 
 void readRandomTextFile(std::string path);
 std::string getRandomText();
+
 
 #endif

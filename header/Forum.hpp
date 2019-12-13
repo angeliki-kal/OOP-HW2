@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 
+#include "Node.hpp"
 #include "Thread.hpp"
 
 
@@ -11,6 +12,7 @@ class Forum {
     std::string title;
     std::map<std::string, Thread*> threads;
     std::map<int, Thread*> post_cache;  //remember where post belongs
+    Node* creator_bst;
   public:
     Forum(const std::string &title);
     ~Forum();

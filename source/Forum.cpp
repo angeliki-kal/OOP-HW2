@@ -5,14 +5,15 @@
 
 using namespace std;
 
-Forum::Forum(std::string const &t):title(t) {
+Forum::Forum(std::string const &t):title(t),threads(),post_cache(),creator_bst(NULL) {
   cout << "Forum with title: " << title << " has just been created\n\n";
 }
 
 Forum::~Forum() {
-  for(auto elem: threads) {
+  for(auto elem: threads) { //delete threads
     delete elem.second;
   }
+  delete creator_bst;
   cout << "\nForum with title: " << title << " is about to be destroyed\n";
 }
 
@@ -73,5 +74,8 @@ Insert Post to Thread and to the BST
 */
 void Forum::insertPost(const string &thread, Post* post) {
   getThread(thread)->addPost(post);
-  //creator_bst.insert(post);
+  if(creator_bst==NULL) {
+    creator_bst = new Node(post->getCreator());
+  }
+  //creator_bst->insert(post);
 }
