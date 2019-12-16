@@ -73,9 +73,15 @@ void Forum::printPost(int id) {
 Insert Post to Thread and to the BST
 */
 void Forum::insertPost(const string &thread, Post* post) {
+  //insert to thread
   getThread(thread)->addPost(post);
+  //insert to creator bst
   if(creator_bst==NULL) {
     creator_bst = new Node(post->getCreator());
   }
-  //creator_bst->insert(post);
+  creator_bst->insert(post);
+}
+
+void Forum::printSorted() {
+  creator_bst->print();
 }

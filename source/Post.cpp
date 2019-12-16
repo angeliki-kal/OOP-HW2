@@ -28,6 +28,10 @@ void Post::print() {
   cout << "\nPost:\n" << id << " " << title << " " << creator->getName() << " " << date.to_string() << "\ntext: \"" << text << "\"\n";
 }
 
+Creator* Post::getCreator() {
+  return creator;
+}
+
 //load random text file to memory, in a vector<string>
 void readRandomTextFile(std::string path) {
   ifstream infile(path);

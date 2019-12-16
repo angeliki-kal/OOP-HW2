@@ -19,6 +19,7 @@ class Forum {
     void addThread(Thread* t);
     Thread* getThread(const std::string &thread_subject);
     void print();
+    void printSorted();
     Post* getPost(int id);
     void printPost(int id);
     void insertPost(const std::string&,Post*);

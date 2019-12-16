@@ -27,8 +27,14 @@ int main(int argc, char** argv) {
     Creator* crt = new Creator("crt"+to_string(i));
     Post* post = new Post("posttitle"+to_string(i), crt, "2000-03-15", getRandomText());
     A.insertPost("Thread2", post); //add to forum
+
+    Post* post2 = new Post("postsecond"+to_string(i), crt, "2000-03-15", getRandomText());
+    A.insertPost("Thread2", post2); //add to forum
+
     creators[i] = crt;
   }
+
+  A.printSorted();
   //print x random posts from forum
   for(int i=0; i<num_posts; i++) {
     A.printPost((rand() % num_posts) + 1);

@@ -11,8 +11,10 @@ class Creator {
     std::vector<Post*> posts; //watch out, if forum destroyed posts are del as well
   public:
     Creator(std::string);
+    void addPost(Post*);
     ~Creator();
     std::string getName();
+    void printPosts();
 };
 
 #endif
